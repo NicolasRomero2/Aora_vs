@@ -1,10 +1,13 @@
 import { View, Text} from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { Link } from 'expo-router'
 
 import  { images } from '../../constants';
-import FormField from '../../components/FormField';
 import { keyboardProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
+
+import FormField from '../../components/FormField';
+import { CustomButton } from '../../components/CustomButton'
 
 const SingIn = () => {
     const [form, setForm] = useState ({
@@ -12,10 +15,16 @@ const SingIn = () => {
         password: '',
     })
 
+    const [isSubmitting, setisSubmitting] = useState (false)
+
+    const subtim = () => {
+
+    }
+
     return(
         <SafeAreaView className="bg-primary h-full">
             <ScrollView>
-                <View className="w-full justify-center h-full px-4 my-6">
+                <View className="w-full justify-center min-h-[83vh] px-4 my-6">
                     <Image source={images.logo}
                     resizeMode='contain' className="w-[115px] h-[35px]" />
 
@@ -38,6 +47,22 @@ const SingIn = () => {
                             password: e})}
                             otherStyles="mt-7"
                     />
+
+                    <CustomButton
+                        title="Sing in"
+                        handlePress={subtim}
+                        containerStyles="mt-7"
+                        isLoading={isSubmitting}
+                    />
+
+                    <View className="just-center pt-5 flex-row gap-2">
+                        <Text className="text-lg text-gray-100 font-pregular">
+                            Dont have account?
+                        </Text>
+                        <Link href="/sign-up"
+                        className="text-lg" font-psemibold text-secondary
+                        >Sing up</Link>
+                    </View>
                 </View>
             </ScrollView>
         </SafeAreaView>
