@@ -19,34 +19,22 @@ SplashScreen.preventAutoHideAsync();
       "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
     });
 
-  useEffect(() => {
+    useEffect(() => {
       if (error) throw error;
+      if (fontsLoaded) SplashScreen.hideAsync();
+  }, [fontsLoaded, error]);
   
-      if (fontsLoaded) {
-        SplashScreen.hideAsync();
-      }
-    }, [fontsLoaded, error]);
-  
-    if (!fontsLoaded) {
-      return null;
-    }
-  
-    if (!fontsLoaded && !error) {
-      return null;
-    }  
-  return (
-    <Stack>
-      <Stack.Screen name="index" options={{headerShown: 
-      false}}/>
-      <Stack.Screen name="(auth)" options={{headerShown: 
-      false}}/>
-      <Stack.Screen name="(tabs)" options={{headerShown: 
-      false}}/>
-      <Stack.Screen name="/search/[query]" options={{headerShown: 
-      false}}/>
-    </Stack>
-  )
-}
+    if (!fontsLoaded && !error) return null;
+      
+    return (
+      <Stack> 
+        <Stack.Screen name="index" options={{headerShown: false}} />
+        <Stack.Screen name="(auth)" options={{headerShown: false}} />
+        <Stack.Screen name="(tads)" options={{headerShown: false}} />
+        <Stack.Screen name="/search/[query]" options={{headerShown: false}} />
+      </Stack>
 
+  );
+}
 
 export default RootLayout;

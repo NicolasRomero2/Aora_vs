@@ -1,13 +1,11 @@
-import { View, Text} from 'react-native'
-import React, { useState } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
-
-import  { images } from '../../constants';
-import { keyboardProps } from 'react-native-web/dist/cjs/modules/forwardedProps';
-
+import { View, Text, Image, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router'; 
+import { Link } from 'expo-router';
+import { images } from '../../constants';
 import FormField from '../../components/FormField';
-import { CustomButton } from '../../components/CustomButton'
+import  CustomButton  from '../../components/CustomButton'
 
 const SingIn = () => {
     const [form, setForm] = useState ({
@@ -15,9 +13,9 @@ const SingIn = () => {
         password: '',
     })
 
-    const [isSubmitting, setisSubmitting] = useState (false)
+    const [isSubmitting, setIsSubmitting] = useState (false)
 
-    const subtim = () => {
+    const submit = () => {
 
     }
 
@@ -50,7 +48,7 @@ const SingIn = () => {
 
                     <CustomButton
                         title="Sing in"
-                        handlePress={subtim}
+                        handlePress={submit}
                         containerStyles="mt-7"
                         isLoading={isSubmitting}
                     />
