@@ -1,16 +1,16 @@
-import bookmark from "../assets/icons/bookmark.png";
-import home from "../assets/icons/home.png";
-import plus from "../assets/icons/plus.png";
-import profile from "../assets/icons/profile.png";
-import leftArrow from "../assets/icons/left-arrow.png";
-import menu from "../assets/icons/menu.png";
-import search from "../assets/icons/search.png";
-import upload from "../assets/icons/upload.png";
-import rightArrow from "../assets/icons/right-arrow.png";
-import logout from "../assets/icons/logout.png";
-import eyeHide from "../assets/icons/eye-hide.png";
-import eye from "../assets/icons/eye.png";
-import play from "../assets/icons/play.png";
+import bookmark from "../assets/icon/bookmark.png";
+import home from "../assets/icon/home.png";
+import plus from "../assets/icon/plus.png";
+import profile from "../assets/icon/profile.png";
+import leftArrow from "../assets/icon/left-arrow.png";
+import menu from "../assets/icon/menu.png";
+import search from "../assets/icon/search.png";
+import upload from "../assets/icon/upload.png";
+import rightArrow from "../assets/icon/right-arrow.png";
+import logout from "../assets/icon/logout.png";
+import eyeHide from "../assets/icon/eyes-hide.png";
+import eye from "../assets/icon/eye.png";
+import play from "../assets/icon/play.png";
 
 export default {
   play,
